@@ -26,7 +26,7 @@ app.use(restify.CORS({
     headers: [''] // sets expose-headers
 }));
 
-app.listen(config.port, function() {
+app.listen(process.env.PORT || config.port, function() {
     console.log('server listening on port number', config.port);
 });
 var routes = require('./routes')(app);
