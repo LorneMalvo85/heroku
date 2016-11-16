@@ -1,0 +1,8 @@
+{
+    "name": "phils first app on heroku",
+    "description": "only for testing",
+    "repository": "https://git.heroku.com/obscure-plateau-84702.git",
+    "logo": "http://node-js-sample.herokuapp.com/node.svg",
+    "keywords": ["node", "static"],
+    "image": "heroku/nodejs"
+}

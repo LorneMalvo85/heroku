@@ -1,0 +1,5 @@
+{
+    "dbPath": "mongodb://artists_admin:mTIu3d3j@ds019926.mlab.com:19926/artist-app-db",
+    "dbPath_local": "mongodb://localhost/artist-rest-api",
+    "port": 8080
+}
