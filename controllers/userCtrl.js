@@ -32,7 +32,7 @@ function userController() {
             about: req.params.about || '',
             coordinates: coords,
             city: req.params.city,
-            profilepic_url: '../img/placeholder.jpg',
+            profilepic_url: 'img/placeholder.jpg',
             youtube_url: req.params.youtube || '',
             soundcloud_url: req.params.soundcloud || '',
             website_url: req.params.website || '',
