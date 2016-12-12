@@ -12,7 +12,6 @@ function categoryController() {
     this.getCategories = function(req, res, next) {
             Category.find({}, function(err, result) {
                 if (err) {
-                    console.log(err);
                     return res.send({
                         'error': err
                     });

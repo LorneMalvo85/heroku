@@ -9,8 +9,6 @@ var app = restify.createServer({
 var corsMiddleware = require('restify-cors-middleware');
 var cors = corsMiddleware({
     origins: ['*']
-        /* ,allowHeaders: ['API-Token'],
-         exposeHeaders: ['API-Token-Expiry']*/
 });
 
 app.pre(cors.preflight);

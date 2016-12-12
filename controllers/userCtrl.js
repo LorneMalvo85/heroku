@@ -58,11 +58,6 @@ function userController() {
     };
 
     this.findUserByToken = function(req, res, next) {
-        /* res.header("Access-Control-Allow-Origin", "*");
-         res.header("Access-Control-Allow-Headers", "X-Requested-With");
-         */
-        console.log('req.params.email: ', req.params.token)
-
         User.findOne({
             email: req.params.token
         }, function(err, user) {
@@ -109,7 +104,7 @@ function userController() {
     };
 
     /**
-     *  This function gets all users with given param from the db
+     *  This function returns all users within a given distance and category
      * 
      * @param {any} req
      * @param {any} res
@@ -141,7 +136,6 @@ function userController() {
                         }
                     },
                     includeLocs: "dist.location",
-                    num: 5, // limit the results
                     spherical: true
                 },
                 function(err, users, stats) {
@@ -185,14 +179,12 @@ function userController() {
     // Update Details of User
     this.updateUserPosition = function(req, res, next) {
         var coords = [req.params.longitude, req.params.latitude]; // the new user location coordinates
-        console.log("FUNCTION updateUserPosition CALLLLLLED!")
 
         // find user with given email adress....
         User.findOne({
             email: req.params.email
         }, function(error, user) {
             if (error) {
-                console.log("couldn't find the user: ", error)
                 return res.send({
                     'error': error
                 });
@@ -200,7 +192,6 @@ function userController() {
                 user.coordinates = coords;
                 var promise = user.save();
                 promise.then(function(data) {
-                    console.log("user saved, data: ", data)
                     res.send(user);
                     res.end(JSON.stringify('user saved'));
                 });
@@ -210,7 +201,7 @@ function userController() {
     };
 
     /**
-     * This function updates the user
+     * This function updates a user
      * 
      * @param {any} req
      * @param {any} res

@@ -3,10 +3,6 @@ module.exports = (function userSchema() {
     // import the necessary modules
     var mongoose = require('../db').mongoose;
     console.log("mongoose: ", mongoose)
-    var like = require('./like');
-    // var Like = mongoose.model('Like');
-    var comment = require('./comment');
-    // var Review = mongoose.model('Review');
 
     var Schema = mongoose.Schema;
 
