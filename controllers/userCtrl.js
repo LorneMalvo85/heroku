@@ -209,7 +209,7 @@ function userController() {
      * @returns updated user
      */
     this.updateUser = function(req, res, next) {
-
+        console.log("req.params.userdata: ", req.params.userdata)
         return User.findById(req.params.userdata._id, function(err, user) {
 
             user.username = req.params.userdata.username;
